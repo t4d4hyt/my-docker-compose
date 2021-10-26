@@ -1,0 +1,15 @@
+
+version: '3.9'
+services:
+    sonarqube:
+        image: amd64/sonarqube
+        container_name: sonarqube
+        ports:
+            - 9000:9000
+            - 9092:9092
+        volumes:
+            - sonarqube_data:/var/lib/sonarqube
+        hostname: sonarqube
+volumes:
+    sonarqube_data:
+        external: true

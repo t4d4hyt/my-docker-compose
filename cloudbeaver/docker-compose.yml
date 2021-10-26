@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+    cloudbeaver:
+        image: dbeaver/cloudbeaver
+        container_name: cloudbeaver
+        ports:
+            - 8978:8978
+        volumes:
+            - cloudbeaver_data:/var/lib/cloudbeaver
+        hostname: cloudbeaver
+
+volumes:
+    cloudbeaver_data:
+        external: true
